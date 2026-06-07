@@ -23,7 +23,7 @@ st.markdown("<h1 class='titulo-ia'>🧬 OLEGARIO TECHBIO IA // Centro de Biointe
 st.write("Plataforma de computação avançada para cruzamento de patógenos e síntese automatizada de imunizantes.")
 st.write("---")
 
-# --- BANCO DE DADOS INTERNO DE PATÓGENOS (Com o novo vírus ácido) ---
+# --- BANCO DE DADOS INTERNO DE PATÓGENOS ---
 banco_dados_virus = {
     "Vírus Acidófilo Gástrico VAG-26": {
         "tipo": "Encapsulado de Alta Resistência", 
@@ -64,7 +64,6 @@ with col1:
     * **Registro no Banco Geral:** {banco_dados_virus[doenca_selecionada]['base_dados']}
     """)
     
-    # Exibe o aviso especial se o vírus ácido for selecionado
     if doenca_selecionada == "Vírus Acidófilo Gástrico VAG-26":
         st.warning(f"⚠️ **Mecanismo Patogênico:** {banco_dados_virus[doenca_selecionada]['mecanismo']}")
     
@@ -87,7 +86,7 @@ with col2:
             time.sleep(0.05)
             progresso_barra.progress(i)
             
-        status_texto.markdown("🧪 **[FASE 3]** Injetando agentes alcalinos e gerando fórmula estabilizada do imunizante...")
+        status_texto.markdown("🧪 **[FASE 3]** Injetando agentes alcalinos e gerando fórmula imunizante...")
         for i in range(75, 101):
             time.sleep(0.03)
             progresso_barra.progress(i)
@@ -97,7 +96,6 @@ with col2:
         st.markdown("<div class='status-box'><h3>📋 Relatório Técnico do Imunizante Desenvolvido</h3></div>", unsafe_allow_html=True)
         st.write(" ")
         
-        # Métricas científicas
         eficacia = round(random.uniform(96.5, 99.8), 2) if doenca_selecionada == "Vírus Acidófilo Gástrico VAG-26" else round(random.uniform(94.1, 98.2), 2)
         
         m1, m2, m3 = st.columns(3)
@@ -110,7 +108,6 @@ with col2:
             
         st.write("### 🧪 Estrutura Molecular do Imunizante:")
         
-        # Se for o nosso vírus gástrico, exibe a estrutura com os compostos corretos
         if doenca_selecionada == "Vírus Acidófilo Gástrico VAG-26":
             st.success(f"""
             * **Base Ativa Primária:** Bicarbonato de Potássio [KHCO₃] *(Agente bloqueador de prótons)*
@@ -123,7 +120,6 @@ with col2:
             * **Adjuvante Geral:** Fosfato de Alumínio Nanoparticulado.
             """)
             
-        # --- OBSERVAÇÃO CRÍTICA DE TESTE EM LABORATÓRIO (MUDANÇA DE COR) ---
         st.markdown(
             """
             <div class='obs-box'>
@@ -136,7 +132,6 @@ with col2:
             """, 
             unsafe_allow_html=True
         )
-        st.balloons()
         
     else:
         st.info("🔬 Sistema pronto. Selecione o patógeno e clique no botão para iniciar os cruzamentos genéticos.")
